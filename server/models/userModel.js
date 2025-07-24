@@ -15,10 +15,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    firstname: {
+    firstName: {
         type: String
     },
-    lastname: { type: String },
+    lastName: { type: String },
     creditBalance: { type: Number, default:5 }
 })
 
