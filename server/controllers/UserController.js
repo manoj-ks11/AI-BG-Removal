@@ -92,7 +92,8 @@ const razorpayIntance = new razorpay({
 
 const paymentRazorpay = async(req, res) => {
     try {
-        const { clerkId, planId } = req.body;
+        const { planId } = req.body;
+        const { clerkId } = req.user; // <-- get from auth middleware
         const userdata = await userModel.findOne({ clerkId });
         if( !userdata || !planId){
             return res.json({ success: false, message: 'Invalid Credentials'});
